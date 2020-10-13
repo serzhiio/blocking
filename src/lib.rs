@@ -164,7 +164,7 @@ impl Executor {
             inner.idle_count += 1;
 
             // Put the thread to sleep until another task is scheduled.
-            let timeout = Duration::from_millis(500);
+            let timeout = Duration::from_millis(5000);
             let (lock, res) = self.cvar.wait_timeout(inner, timeout).unwrap();
             inner = lock;
 
